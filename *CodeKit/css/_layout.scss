@@ -1,0 +1,211 @@
+/* Viewport metadata for supported browsers */
+@viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
+@-ms-viewport{
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
+/* Clearfix http://css-tricks.com/snippets/css/clear-fix/ */
+%clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+section dl, article dl {
+    @extend %clearfix;
+}
+
+%button {
+    width: auto;
+    @include border-radius($ratio-one);
+    border: 2px solid darken($color-mid,23.6%);
+    @include property(padding,$ratio-one,$ratio-two);
+    line-height: 1;
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+}
+
+
+html {	
+	@include font($font-size-default,$line-height-default,$font-one);
+	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	@include property(margin,0,auto);
+	color: $color-dark;
+	background-color: $color-light;
+}
+
+p {
+	@include property(margin-bottom,$ratio-four);
+}
+
+/* Lists */
+
+ul, ol, dl {
+	//list-style: none;
+	@include property(margin,0,0,$ratio-four,$ratio-six);
+}
+
+li {
+ 	@include property(margin-bottom,$ratio-two);
+}
+
+dt, dd {
+    float: left;
+}
+
+dt {
+    clear: left;
+}
+
+dd {
+	@include property(margin-left,$ratio-four);
+}
+
+.quote {
+    @include font($ratio-three,$line-height-default,$font-two);
+ //   @include border(border-left,$ratio-zero,solid,$color-mid);
+    @include property(margin,0,0,$ratio-two,$ratio-five);
+    @include property(padding-left,$ratio-three);
+//    width: 61.8%;
+//    float: right;
+
+    p {
+        @include property(margin-bottom,$ratio-one);
+    }
+    
+    figcaption {
+        //color: $color-highlight;
+        }
+
+}
+
+/* Links */
+a:link {
+	text-decoration: none; 
+	border-bottom: 1px solid $color-mid; 
+}
+a:visited {color: $color-mid;}
+a:hover {border-bottom: 1px solid $color-dark;}
+a:active {color: $color-mid;}
+
+a[href^=tel] {
+	//color: $color-highlight;
+}
+
+@media screen and (min-device-width:1025px){
+    a[href^=tel] {
+        pointer-events: none;
+        border-bottom: none;
+    }
+}
+
+/* Text styling */
+code {
+    font-family: $font-monospace;    
+}
+
+strong {font-weight: bold;}
+em {font-style: italic;}
+
+/* Buttons */
+button {
+	@extend %button;
+}
+
+/* Headings */
+
+section h1 {
+	@include font($ratio-six,$line-height-headings,$font-two);
+	@include property(margin-bottom,$ratio-five);
+//	color: $color-highlight;
+}
+
+h2 {
+	@include font($ratio-five,$ratio-four,$font-two);
+	@include property(margin-bottom,$ratio-four);
+//	color: $color-highlight;
+}
+
+h3 {
+	@include font($ratio-four,$line-height-headings,$font-two);
+	@include property(margin-bottom,$ratio-two);
+//	color: $color-lowlight;
+}
+
+h4 {
+	@include property(margin-right,$ratio-three);
+	float: left;
+	font-weight: bold;
+}
+
+/* Page layout */
+body > section, body > article, nav > ul, footer > section, footer > address {
+	margin: auto;
+	max-width: $width-body;
+	@include property(padding,$ratio-five,5%);
+	outline: 1px solid green;
+}
+
+nav {
+    position: -webkit-sticky;
+	top: 0;
+	z-index: 1000;
+	max-width: none;
+	background-color: $color-mid;	
+	
+	ul,dl {
+	    list-style: none;
+	    @include property(padding,$ratio-two,$ratio-four);
+	    text-align: center;
+	}
+	
+	li, dt, dd {
+	    float: none;
+	    display: inline-block;
+	    @include property(margin-right,$ratio-five);
+	    line-height: 1;
+	}
+	
+	li:last-of-type {
+	    @include property(margin-right,0);
+	}
+	
+	//li:before {display:none;}
+	
+	a:link, a:visited {
+	    border: none;
+	}   
+}
+
+#ben-manley {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    p {
+        @include property(width,auto);
+        float: right;
+        @include property(margin-bottom,0);    
+        @include property(padding,$ratio-one,$ratio-three);
+        //background-color: lighten($color-lowlight,15%);
+        @include font(0.8,$line-height-default,$font-two);
+        //color: $color-light;
+        text-align: right;
+    }
+}

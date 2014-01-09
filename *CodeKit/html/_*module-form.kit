@@ -1,0 +1,14 @@
+<form class="contact" id="contact-form" action="php/submit-contact-form.php" method="post">  
+  <label for="fullname">Name</label>
+  <input type="text" name="fullname" id="fullname" placeholder="Your Name" required>
+  <label for="mailfrom">Email</label>
+  <input type="email" name="mailfrom" id="mailfrom" placeholder="example@address.com" required>		  
+  <label for="message-box">Message</label>		  
+  <textarea rows="8" name="message-box" id="message-box" placeholder="Type your message here..." required></textarea>
+  <input class="submit" type="submit" value="Send Email">
+  <!--The following field filters out bot generated emails-->
+  <div hidden id="mail-filter">
+      <label for="filter">This field filters out unsolicited emails and should be left blank.</label>
+      <input type="email" name="filter" id="filter" placeholder="This field filters out unsolicited emails and should be left blank.">
+  </div>
+</form>

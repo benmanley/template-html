@@ -1,0 +1,53 @@
+form {
+    max-width: $width-form;
+    margin: auto;
+    outline: 1px solid red;
+}
+
+@media screen and (max-device-width:480px), screen and (max-width:480px) {
+    form {
+        max-width: $width-form-mobile;
+    }
+}
+
+textarea, input {
+	border: 2px solid $color-mid;
+	display: block;
+	@include property(width,100%);
+}
+
+label {
+	display: block;
+}
+
+label {
+	@include property(margin,$ratio-three,0,0,0);
+	@include font($ratio-three,$ratio-three,$font-two);
+	text-align: left;
+}
+
+input {
+	@include property(margin,0,0,$ratio-three,0);
+	@include property(padding-left,$ratio-two);
+}
+
+#fullname {
+	@include property(margin-right,$ratio-five);
+}
+
+#message-box {
+	@include property(margin,0,0,$ratio-three,0);
+	@include property(padding-left,$ratio-two);
+	overflow-y: auto;
+}
+
+.submit {
+    @extend %button;
+}
+
+/* Spam filter (honeypot technique) */
+#mail-filter {
+    display: none;
+    speak: none;
+}
+

@@ -1,0 +1,7 @@
+/*
+ * Breakpoint jQuery Plugin
+ *
+ * Copyright (c) 2012
+ * Licensed under the MIT license.
+ *
+ */(function(e){e.breakpoint={els:e(),init:!1};e.fn.breakpoint=function(){e.breakpoint.els=e.breakpoint.els.add(this);e.breakpoint.init||e(window).on("resize.breakpoint",function(){e.breakpoint.els.trigger("swapres.breakpoint")});return this.each(function(){var t=e(this),n=[],r=[];t.data("m1src",t.attr("src"));e.each(t.data(),function(e,t){if(e&&(e.toLowerCase().indexOf("maxwidth")===0||e.toLowerCase().indexOf("minwidth")===0)){var i=e.substring(3).match(/\d+/g);if(i.length===1){var s={key:e,type:e.toLowerCase().indexOf("max")===0?"max":"min",width:i[0]};s.type==="max"?n.push(s):r.push(s)}}});console.log(r);r.sort(function(e,t){return e.width-t.width});console.log(r);console.log(n);n.sort(function(e,t){return t.width-e.width});console.log(n);t.on("swapres.breakpoint",function(){console.log("swapres");if(n.length>0||r.length>0){var i=e(window).width(),s=null;e.each(n,function(e,t){if(i<=t.width){console.log("matched breakpoint: "+t.key);s=t}});e.each(r,function(e,t){if(i>=t.width){console.log("matched breakpoint: "+t.key);s=t}});if(s!=null){console.log("using breakpoint: "+s.key);t.attr("src",t.data(s.key))}else{console.log("using mobile1st");t.attr("src",t.data("m1src"))}}else{console.log("using mobile1st");t.attr("src",t.data("m1src"))}}).trigger("swapres.breakpoint")})}})(jQuery);

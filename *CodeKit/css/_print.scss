@@ -1,0 +1,21 @@
+@media print {
+      body {
+          width: 100%;
+      }
+      
+      .image-gallery {
+          height: auto;
+          
+          div {
+              position: static;
+          }
+          
+          img {
+              height: auto;
+          }
+          
+          li {
+              margin: 0 0 100px 0;
+          }
+      }
+}
