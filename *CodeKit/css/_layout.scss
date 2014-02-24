@@ -102,7 +102,6 @@ a:link {
 	border-bottom: 1px solid $color-mid; 
 }
 a:visited {color: $color-mid;}
-a:hover {border-bottom: 1px solid $color-dark;}
 a:active {color: $color-mid;}
 
 a[href^=tel] {
@@ -110,6 +109,8 @@ a[href^=tel] {
 }
 
 @media screen and (min-device-width:1025px){
+    a:hover {border-bottom: 1px solid $color-dark;}
+    
     a[href^=tel] {
         pointer-events: none;
         border-bottom: none;
