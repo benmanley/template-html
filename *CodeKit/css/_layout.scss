@@ -9,34 +9,6 @@
     zoom: 1.0;
 }
 
-/* Clearfix http://css-tricks.com/snippets/css/clear-fix/ */
-%clearfix {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-section dl, article dl {
-    @extend %clearfix;
-}
-
-%button {
-    width: auto;
-    @include border-radius($ratio-one);
-    border: 2px solid darken($color-mid,23.6%);
-    @include property(padding,$ratio-one,$ratio-two);
-    line-height: 1;
-    
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    text-align: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    
-}
-
-
 html {	
 	@include font($font-size-default,$line-height-default,$font-one);
 	font-weight: 300;
@@ -46,6 +18,7 @@ html {
 }
 
 body {
+	@include property(font-size,$font-size-default);
 	@include property(margin,0,auto);
 	color: $color-dark;
 	background-color: $color-light;
@@ -60,6 +33,10 @@ p {
 ul, ol, dl {
 	//list-style: none;
 	@include property(margin,0,0,$ratio-four,$ratio-six);
+}
+
+section dl, article dl {
+    @extend %clearfix;
 }
 
 li {
@@ -160,7 +137,7 @@ h4 {
 body > section, body > article, nav > ul, footer > section, footer > address {
 	margin: auto;
 	max-width: $width-body;
-	@include property(padding,$ratio-five,5%);
+	@include property(padding,$ratio-five);
 	outline: 1px solid green;
 }
 

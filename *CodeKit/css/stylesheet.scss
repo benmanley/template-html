@@ -2,8 +2,10 @@
 @import "fonts";
 @import "mixins";
 @import "bourbon";
-@import "variables";
+@import "base-variables";
+@import "base-mixins";
 @import "layout";
+@import "layout-breakpoints";
 @import "module-form";
 @import "module-gallery";
 @import "print";

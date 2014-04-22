@@ -1,0 +1,23 @@
+//Project-specific mixins and placeholders for extends
+
+/* Clearfix http://css-tricks.com/snippets/css/clear-fix/ */
+%clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+%button {
+    width: auto;
+    @include border-radius($ratio-one);
+    border: 2px solid darken($color-mid,23.6%);
+    @include property(padding,$ratio-one,$ratio-two);
+    line-height: 1;
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}

@@ -17,7 +17,7 @@ $font-size-default-px: $font-size-default-unitless * 1px;
 $line-height-default: 1.618;
 //DO NOT EDIT
 
-$font-size-default: 1.1;
+$font-size-default: 1;
 $line-height-headings: 1.2;
 
 //* Colours – Palette */
@@ -41,9 +41,8 @@ $color-lowlight: $color-dark-blue;
 $width-base: $font-size-default-unitless * $font-size-default * 1.618;
 $width-base-squared: $width-base * $width-base;
 $width-body: $width-base-squared * 1px;
-$width-gallery-unitless: $width-base-squared - ($ratio-four*2*$font-size-default-unitless);
-$width-gallery: $width-gallery-unitless * 1px;
-$height-gallery: $width-gallery-unitless * 0.75 * 1px;
+$width-gallery: $width-body - ($ratio-five * 2 * $font-size-default-px);
+$height-gallery: $width-gallery * 0.75;
 
 $width-gallery-tablet: 716px;
 $height-gallery-tablet: 537px;
