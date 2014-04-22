@@ -24,18 +24,34 @@ $(document).ready(function(){
     //The parent of the anchor is then selected to allow z-index to be applied to the anchor's container
     $("body").on("touchstart, click", ".trigger", function (event) {
         event.preventDefault();
+        var galleryTarget = $(".gallery-target");
         var parent = $(this).parent();
         var isActive = parent.hasClass("active");
-        if(isActive) {
-            parent.removeClass("active").addClass("deactivate");
-            setTimeout(function () {
-                $(".image-gallery li").removeClass("deactivate");
-            }, 750);
+        if (this.hasAttribute("data-gallery-control")){
+            var galleryControl = this.getAttribute("data-gallery-control");
+            galleryTarget.each(function(){
+                if($(this).attr("data-gallery-target") === galleryControl){
+                    $(this).removeClass("deactivate").addClass("activate");
+                }
+                else if($(this).hasClass("activate")){
+                    $(this).addClass("deactivate").removeClass("activate");
+                }
+            });
         }
         else {
-            parent.addClass("active");
+            if(isActive) {
+                parent.removeClass("active").addClass("deactivate");
+                setTimeout(function () {
+                    $(".image-gallery li").removeClass("deactivate");
+                }, 750);
+            }
+            else {
+                parent.addClass("active");
+            }
         }
     });
+    //Mobile image gallery
+    
     //Responsive images
     $("img").hisrc({ useTransparentGif: false, speedTestUri: 'images/50K.jpg'
      });
