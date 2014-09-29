@@ -134,7 +134,7 @@ h4 {
 }
 
 /* Page layout */
-body > section, body > article, nav > ul, footer > section, footer > address {
+body > section > div, body > article > div, nav > ul, footer > section, footer > address {
 	margin: auto;
 	max-width: $width-body;
 	@include property(padding,$ratio-five);
@@ -142,7 +142,7 @@ body > section, body > article, nav > ul, footer > section, footer > address {
 }
 
 nav {
-    position: -webkit-sticky;
+    position: sticky;
 	top: 0;
 	z-index: 1000;
 	max-width: none;
