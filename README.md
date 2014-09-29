@@ -38,19 +38,19 @@ Edit the following `.scss` files to customise your site:
 * `_*meta-nofollow` – default value for meta robots. 
 * `_*meta-open-graph` – adds [open graph](http://ogp.me) meta tags. They can be customised using the variables in `_*meta-metadata.scss`.
 
-### default-html.html
+### test.html
 
 This file contains many standard HTML elements and allows you to see how they display as you style your site. This file should be deleted before launching your finished site. It's adapted from Jukka Korpela's [Test display of HTML elements](http://www.cs.tut.fi/~jkorpela/www/testel.html).
 
 ### Creating a new page
 If you're unfamiliar with CodeKit's .kit language, [read this first](http://incident57.com/codekit/kit.php).
 
-In *CodeKit > html, create two new .kit files. Say we want to end up with default-html.html, we create:
+In *CodeKit > html, create two new .kit files. Say we want to end up with test.html, we create:
 
-1. default-html.kit
-2. content-default-html.kit
+1. test.kit
+2. content-test.kit
 
-#### default-html.kit
+#### test.kit
 Add the following .kit variables and imports. Optionally, you can add local `$og-*` variables to override the master variables in `_*meta-metadata`.
 
 ```html
@@ -67,12 +67,12 @@ Add the following .kit variables and imports. Optionally, you can add local `$og
 ** *02b-head-nofollow.kit – `<head>` including `<meta name="robots" content="noindex, nofollow">`
 ** *03-masthead.kit – `<body>` + `<header>`
 ** *04-navigation.kit – main `<nav>`
-** content-default-html.kit - the page content
+** content-test.kit - the page content
 ** *05-footer.kit – `<footer>`
 ** *06-scripts.kit – `<script>` tags
 ** *07-close.kit – closing `</body>` and `</html>` tags
 
-#### content-default-html.kit
+#### content-test.kit
 This is where you add any content unique to the page you are creating. 
 
 ### stylesheet.scss
